@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<style>
+    a{
+    color: #fff !important;
+}
+    input[type=checkbox] {
+        height: 30px;
+        margin-left: -260px;
+        /* left: -100px; */
+    }
+
+    input[type=checkbox]:checked {
+        height: 30px;
+        left: -100px;
+    }
+
+</style>
+
+<br>
+<center><h2 style="font-weight: 600;">Enter Data to get Predictions</h2></center>
+<br>
+<center>
+    <div class="form-div"
+        style="width: 700px;background-color: rgba(89, 63, 114, 0.836); margin-left: 50px; border-radius: 20px;">
+        <br>
+        <form style=" margin-left: 0px; width: 550px; text-align: left;" method="POST">
+            {% csrf_token %}
+            <div class="form-nest-div-1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Wife Age</label>
+                    {{form.wife_age|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Wife Education</label>
+                    {{form.wife_education|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Husband Education</label>
+                    {{form.husband_education|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Number of Children</label>
+                    {{form.number_of_children|add_class:'form-control'}}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Is Wife Islamic</label>
+                    {{form.is_wife_islamic|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Is Wife Non Working</label>
+                    {{form.is_wife_non_working|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Standard of Living</label>
+                    {{form.standard_of_living|add_class:'form-control'}}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"
+                        style="color: rgb(255, 251, 0); font-weight: 600; font-size: 1.15em;">Media Exposure</label>
+                    {{form.media_exposure|add_class:'form-control'}}
+                </div>
+            <center><input type="submit" class="btn" value="Submit"
+                style="background: rgb(255, 198, 10); color: #000; font-weight: 600; width: 500px;">
+            </center>
+                <br><br><br>
+        </form>
+        
+    </div>
+</center>
+<br>
+
+
+
+
+
+
+
+{% endblock %}
